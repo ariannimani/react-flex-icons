@@ -1,0 +1,38 @@
+---
+to: src/<%= type %>/<%= name %>Icon/<%= name %>Icon.test.tsx
+---
+
+import <%= name %>Icon from "./<%= name %>Icon";
+import { render } from "@testing-library/react";
+import "@testing-library/jest-dom";
+
+describe("<%= name %>Icon", () => {
+  const testId = "<%= name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase() %>"
+
+  it("renders the icon with default props", () => {
+    const { getByTestId } = render(<<%= name %>Icon />);
+    const icon = getByTestId(`${testId}-icon`);
+    expect(icon).toBeInTheDocument();
+    expect(icon).toHaveClass("icon medium");
+  });
+
+  it("renders the icon with custom size", () => {
+    const { getByTestId } = render(<<%= name %>Icon size="large" />);
+    const icon = getByTestId(`${testId}-icon`);
+    expect(icon).toHaveClass("icon large");
+  });
+
+  it("renders the icon with custom className", () => {
+    const { getByTestId } = render(
+      <<%= name %>Icon className="custom-class" />
+    );
+    const icon = getByTestId(`${testId}-icon`);
+    expect(icon).toHaveClass("icon medium custom-class");
+  });
+
+  it("renders the icon with custom opacity", () => {
+    const { getByTestId } = render(<<%= name %>Icon opacity={0.5} />);
+    const icon = getByTestId(`${testId}-icon`);
+    expect(icon.style.opacity).toBe("0.5");
+  });
+});

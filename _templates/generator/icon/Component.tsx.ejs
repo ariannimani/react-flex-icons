@@ -1,0 +1,17 @@
+---
+to: src/<%= type %>/<%= name %>Icon/<%= name %>Icon.tsx
+---
+
+import React from 'react';
+import { IconProps } from "../../types";
+import IconWrapper from "../../components/IconWrapper";
+
+const <%= name %>Icon: React.FC<IconProps> = ({ size = "medium", color = "black", ...rest }) => {
+  return (
+    <IconWrapper testId="<%= name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase() %>" size={size} color={color} {...rest}>
+      <circle cx="12" cy="12" r="10" fill="currentColor" />
+    </IconWrapper>
+  );
+};
+
+export default <%= name %>Icon;
