@@ -1,6 +1,5 @@
 import { forwardRef } from "react";
 import { IconProps } from "../../types";
-import styles from "./IconWrapper.module.css";
 import { colorMap, sizeMap } from "../../constants";
 
 const IconWrapper = forwardRef<SVGSVGElement, IconProps>(
@@ -35,7 +34,7 @@ const IconWrapper = forwardRef<SVGSVGElement, IconProps>(
         data-testid={`${testId}-icon`}
         width={width ?? iconSize}
         height={height ?? iconSize}
-        className={`${styles.icon} ${styles[size] || ""} ${className}`}
+        className={className}
         style={computedStyle}
         viewBox={viewBox}
         xmlns="http://www.w3.org/2000/svg"

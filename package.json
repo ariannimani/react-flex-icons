@@ -1,11 +1,12 @@
 {
   "name": "react-flex-icons",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "React Flex Icons",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "prepublish": "npm run rollup",
     "rollup": "rollup -c --bundleConfigAsCjs",
     "test": "jest",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
