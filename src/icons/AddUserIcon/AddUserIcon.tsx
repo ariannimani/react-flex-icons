@@ -1,10 +1,10 @@
 import React from "react";
 import { IconProps } from "../../types";
-import IconWrapper from "../../components/IconWrapper";
+import { IconWrapper } from "../../components/IconWrapper";
 
 const AddUserIcon: React.FC<IconProps> = ({
   size = "medium",
-  color = "black",
+  color = "inherit",
   ...rest
 }) => {
   return (

@@ -1,1 +1,1 @@
-export { default } from "./AccountingIcon";
+export { default } from './AccountingIcon';

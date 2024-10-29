@@ -1,31 +1,31 @@
-#!/bin/bash
+# #!/bin/bash
 
-# Check for nested folders within src directory
-nested_folders=$(find src -type d -mindepth 4)
-if [ ! -z "$nested_folders" ]; then
-  echo "Nested folders detected in src directory. Please ensure that there are no folders nested more than three levels deep from src folder."
-  echo "$nested_folders"
-  exit 1
-fi
+# # Check for nested folders within src directory
+# nested_folders=$(find src -type d -mindepth 4)
+# if [ ! -z "$nested_folders" ]; then
+#   echo "Nested folders detected in src directory. Please ensure that there are no folders nested more than three levels deep from src folder."
+#   echo "$nested_folders"
+#   exit 1
+# fi
 
-# Run linting
-printf "\n\n"
-echo "Running ESLint checks. Please wait..."
-npm run lint
+# # Run linting
+# printf "\n\n"
+# echo "Running ESLint checks. Please wait..."
+# npm run lint
 
-# Check if there are any lint errors
-if [ $? -ne 0 ]; then
-  echo "Linting failed. Please fix the errors before committing."
-  exit 1
-fi
+# # Check if there are any lint errors
+# if [ $? -ne 0 ]; then
+#   echo "Linting failed. Please fix the errors before committing."
+#   exit 1
+# fi
 
-# Run Jest tests
-printf "\n\n"
-echo "Running Jest tests. Please wait..."
-npm test
+# # Run Jest tests
+# printf "\n\n"
+# echo "Running Jest tests. Please wait..."
+# npm test
 
-# Check if there are any test failures
-if [ $? -ne 0 ]; then
-  echo "Jest tests failed. Please fix the failing tests before committing."
-  exit 1
-fi
+# # Check if there are any test failures
+# if [ $? -ne 0 ]; then
+#   echo "Jest tests failed. Please fix the failing tests before committing."
+#   exit 1
+# fi

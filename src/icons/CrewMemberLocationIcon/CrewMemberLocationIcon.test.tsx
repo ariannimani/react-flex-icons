@@ -1,0 +1,27 @@
+import CrewMemberLocationIcon from "./CrewMemberLocationIcon";
+import { render } from "@testing-library/react";
+import "@testing-library/jest-dom";
+
+describe("CrewMemberLocationIcon", () => {
+  const testId = "crew-member-location"
+
+  it("renders the icon with default props", () => {
+    const { getByTestId } = render(<CrewMemberLocationIcon />);
+    const icon = getByTestId(`${testId}-icon`);
+    expect(icon).toBeInTheDocument();
+  });
+
+  it("renders the icon with custom className", () => {
+    const { getByTestId } = render(
+      <CrewMemberLocationIcon className="custom-class" />
+    );
+    const icon = getByTestId(`${testId}-icon`);
+    expect(icon).toHaveClass("custom-class");
+  });
+
+  it("renders the icon with custom opacity", () => {
+    const { getByTestId } = render(<CrewMemberLocationIcon opacity={0.5} />);
+    const icon = getByTestId(`${testId}-icon`);
+    expect(icon.style.opacity).toBe("0.5");
+  });
+});

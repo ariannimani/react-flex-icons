@@ -1,4 +1,5 @@
-import { StoryFn, Meta } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
+
 import AddUserIcon from "./AddUserIcon";
 
 export default {
@@ -8,7 +9,7 @@ export default {
     size: {
       control: {
         type: "select",
-        options: ["small", "medium", "large", "extralarge"],
+        options: ["small", "medium", "large", "extra-large"],
       },
     },
     color: {
@@ -19,10 +20,10 @@ export default {
     },
   },
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
   tags: ["autodocs"],
-} as Meta<typeof AddUserIcon>;
+};
 
 const Template: StoryFn<typeof AddUserIcon> = (args) => (
   <AddUserIcon {...args} />
@@ -48,7 +49,7 @@ Large.args = {
 
 export const ExtraLarge = Template.bind({});
 ExtraLarge.args = {
-  size: "extraLarge",
+  size: "extra-large",
   color: "black",
 };
 
@@ -75,3 +76,4 @@ Gray.args = {
   size: "medium",
   color: "gray",
 };
+

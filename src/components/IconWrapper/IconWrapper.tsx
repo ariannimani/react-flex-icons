@@ -8,7 +8,7 @@ const IconWrapper = forwardRef<SVGSVGElement, IconProps>(
       testId = "",
       children,
       size = "medium",
-      color = "black",
+      color = "inherit",
       opacity = 1,
       viewBox = "0 0 70 70",
       className = "",

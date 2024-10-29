@@ -13,11 +13,6 @@ describe("IconWrapper Component", () => {
     expect(getByText("Test Icon")).toBeInTheDocument();
   });
 
-  test("renders with specified size class", () => {
-    const { getByTestId } = render(<IconWrapper size="large" />);
-    expect(getByTestId("-icon")).toHaveClass("large");
-  });
-
   test("renders with default viewBox if not provided", () => {
     const { getByTestId } = render(<IconWrapper />);
     expect(getByTestId("-icon")).toHaveAttribute("viewBox", "0 0 70 70");

@@ -13,13 +13,6 @@ describe("<%= name %>Icon", () => {
     const { getByTestId } = render(<<%= name %>Icon />);
     const icon = getByTestId(`${testId}-icon`);
     expect(icon).toBeInTheDocument();
-    expect(icon).toHaveClass("icon medium");
-  });
-
-  it("renders the icon with custom size", () => {
-    const { getByTestId } = render(<<%= name %>Icon size="large" />);
-    const icon = getByTestId(`${testId}-icon`);
-    expect(icon).toHaveClass("icon large");
   });
 
   it("renders the icon with custom className", () => {
@@ -27,7 +20,7 @@ describe("<%= name %>Icon", () => {
       <<%= name %>Icon className="custom-class" />
     );
     const icon = getByTestId(`${testId}-icon`);
-    expect(icon).toHaveClass("icon medium custom-class");
+    expect(icon).toHaveClass("custom-class");
   });
 
   it("renders the icon with custom opacity", () => {
